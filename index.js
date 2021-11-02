@@ -18,7 +18,7 @@ async function mulai() {
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 let caliph = new WAPI()
 caliph.browserDescription = Browsers.appropriate('Desktop')
-caliph.browserDescription[0] = "Bot WhatsApp By @Caliph91"
+caliph.browserDescription[0] = "Bot WhatsApp By Bisu Official"
 var { currentVersion } = await fetch.json(`https://web.whatsapp.com/check-update?version=1&platform=web`)
 caliph.version = currentVersion.split('.').map(a => parseInt(a)) || [2, 2140, 12]
 caliph.logger.level = 'warn'
@@ -29,7 +29,7 @@ console.log(color(figlet.textSync('Base Wabot', {
 		width: 80,
 		whitespaceBreak: false
 	}), 'cyan'))
-console.log(color('[ CREATED BY Caliph91 ]'))
+console.log(color('[ CREATED BY BisuArea ]'))
 caliph.on('qr', async () => {
 console.log('Scan kode qr ini untuk menjalankan bot')
 })
