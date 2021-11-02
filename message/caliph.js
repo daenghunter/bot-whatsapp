@@ -79,10 +79,9 @@ return {key:{ fromMe:false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remo
 						 switch(command) {
 case prefix+'help': case prefix+'menu':
 caliph.updatePresence(m.chat, 'composing')
-var menu = `*WHATSAPP BOT*
+var menu = `*BISU OFFICIAL BOT*
 
-Source code : https://clph.pw/m9oU
-Author : @caliph91
+Owner : JAROT🔥
 Lib : Baileys
 Battery : ${caliph.battery ? caliph.battery.value +'%' : 'Belum kedetect'} ${caliph.battery ? caliph.battery.live ? '🔌 Charging...' : '⚡ Discharging' : ''}
 
@@ -163,7 +162,7 @@ Maker Menu
 - ${prefix}kanekilogo (teks|teks2)
 `.trim()
 var img = fs.readFileSync(global.thumb)
-caliph.sendMessage(m.chat, img, mType.image, { quoted: freply('Rikka-Botz WhatsApp', img), caption: menu })
+caliph.sendMessage(m.chat, img, mType.image, { quoted: freply('Bisu Area', img), caption: menu })
 break 
 case prefix+'ocr':
 case prefix+'imgtotext':
@@ -205,7 +204,7 @@ m.reply(respon)
 break
 case prefix+'del':
 case prefix+'delete':
-if (!m.quoted) throw `Reply Pesannya Banh!`
+if (!m.quoted) throw `Reply Pesannya Bang!`
 if (!m.quoted.fromMe) throw `Gbisa hpus pesan org lain!`
 m.quoted.delete()
 break
@@ -251,26 +250,26 @@ break
 case prefix+'loli':
 m.reply(`_*Tunggu permintaan anda sedang diproses..*_`)
 var url = global.API('caliphAPI', '/api/loli', {}, 'apikey')
-caliph.sendMessage(m.chat, { url }, mType.image, { quoted: m , caption: 'Lolinya banh...'})
+caliph.sendMessage(m.chat, { url }, mType.image, { quoted: m , caption: 'Lolinya Bang...'})
 break
 case prefix+'lolimaker':
 if (!text) throw `Teksnya manaaa??`
 apii = global.API('caliphAPI', '/api/lolimaker', { text }, 'apikey')
 buffer = await getBuffer(apii)
-caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh banh lolinya :v' })
+caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh Bang lolinya :v' })
 break
 case prefix+'remlogo':
 if (!text) throw `Teksnya manaaa??`
 apii = global.API('caliphAPI', '/api/rem', { text }, 'apikey')
 buffer = await getBuffer(apii)
-caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh banh logo remnya :v' })
+caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh Bang logo remnya :v' })
 break
 case prefix+'kanekilogo':
 case prefix+'kanekimaker':
 if (!text) throw `Teksnya manaaa??`
 apii = global.API('caliphAPI', '/api/kaneki', { text }, 'apikey')
 buffer = await getBuffer(apii)
-caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh banh logo kanekinya :v' })
+caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh Bang logo kanekinya :v' })
 break
 case prefix+'sadboy':
 if (!text) throw `Teksnya manaaa??\nContoh : ${command} caliph|ganz`
@@ -285,7 +284,7 @@ if (!text) throw `Teksnya manaaa??\nContoh : ${command} caliph|ganz`
 var [tek, tek2] = text.split('|')
 apii = global.API('caliphAPI', '/api/girlneko', { text: tek, text2: tek2 }, 'apikey')
 buffer = await getBuffer(apii)
-caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh banh logo nekonya :v' })
+caliph.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: 'Neh Bang logo nekonya :v' })
 break
 case prefix+'setthumb':
 if (!isOwner) return
@@ -435,9 +434,9 @@ m.reply(response)
 caliph.reply(m.sender, `*DELETE URL*\n\n\`\`\`${del}\`\`\`\n\nNote : Jika Url Dihapus, Maka Short Link Anda Tidak Bisa Di Akses..`, m)
 break
 case prefix+'getsesi':
-if (m.isGroup) throw `Private Chat Aja Banh Biar aman :)`
+if (m.isGroup) throw `Private Chat Aja Bang Biar aman :)`
 if (!isOwner) throw `Affkh kmu owner?`
-await m.reply('Nih Banh Session Botnya :)')
+await m.reply('Nih Bang Session Botnya :)')
 baffer = fs.readFileSync(global.authfile)
 await caliph.sendMessage(m.chat, baffer, mType.document, { filename: 'session.json', mimetype: 'application/json' })
 await caliph.reply(m.chat, 'Nih versi teksnya...')
@@ -445,9 +444,9 @@ caliph.reply(m.chat, baffer.toString())
 break 
 case prefix+'base64':
 qts = m.quoted ? m.quoted.text : text
-if (!qts) throw `Teksnya Mana banh?`
+if (!qts) throw `Teksnya Mana Bang?`
 str = Buffer.from(qts, 'utf-8')
-await m.reply('Nih banh..')
+await m.reply('Nih Bang..')
 m.reply(str.toString('base64'))
 break
 case prefix+'tovideo':
@@ -683,7 +682,7 @@ if (!args[0]) {
 const buttonsMessage = {
     contentText: `Pilih Enable atau Disable
 `.trim(),    
-footerText: `🔰 ${caliph.user.name} By Caliph71🔰`,
+footerText: `🔰 ${caliph.user.name} By Bisu Official🔰`,
     buttons: buttons,
     headerType: 1
 }
@@ -713,7 +712,7 @@ if (!args[0]) {
 const buttonsMessage = {
     contentText: `Pilih Enable atau Disable
 `.trim(),    
-footerText: `🔰 ${caliph.user.name} By Caliph71🔰`,
+footerText: `🔰 ${caliph.user.name} By Bisu Official🔰`,
     buttons: buttons,
     headerType: 1
 }
@@ -743,7 +742,7 @@ if (!args[0]) {
 const buttonsMessage = {
     contentText: `Pilih Enable atau Disable
 `.trim(),    
-footerText: `🔰 ${caliph.user.name} By Caliph71🔰`,
+footerText: `🔰 ${caliph.user.name} By Bisu Official🔰`,
     buttons: buttons,
     headerType: 1
 }
